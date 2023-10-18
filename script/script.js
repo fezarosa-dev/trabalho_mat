@@ -81,9 +81,11 @@ function formatarRG() {
 
 
 function validarRG() {
-    const rg = document.getElementById("rg").value;
+    let rg = document.getElementById("rg").value;
+    rg = rg.replace(/[.-]/g, '');
+
     if (rg.length !== 9) {
-        alert("O RG deve conter 9 dígitos.");
+        document.getElementById("idResultadoRG").innerText = "RG inválido: Deve conter 9 dígitos.";
         return;
     }
 
@@ -104,10 +106,8 @@ function validarRG() {
     }
 
     if (rg.charAt(8) === digitoVerificador.toString()) {
-        alert("RG válido!");
         document.getElementById("idResultadoRG").innerText = "RG válido!";
     } else {
-        alert("RG inválido!");
         document.getElementById("idResultadoRG").innerText = "RG inválido!";
     }
 }

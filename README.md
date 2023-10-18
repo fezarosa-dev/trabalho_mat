@@ -1,32 +1,21 @@
+### Validação de CPF (Cadastro de Pessoa Física)
 
-**Verificação dos Dígitos Verificadores no CPF:**
+A validação do CPF envolve dois aspectos principais: formato e dígitos verificadores. Vamos dar uma olhada em cada um deles:
 
-O CPF é composto por 11 dígitos, sendo os dois últimos dígitos verificadores. A validação dos dígitos verificadores é realizada usando a lógica do módulo 11. Aqui está como funciona:
+1. **Formato do CPF**: O CPF é um número composto por 11 dígitos, geralmente apresentado no formato "XXX.XXX.XXX-YY", onde "X" é qualquer dígito de 0 a 9 e "Y" é um dígito de verificação. O formato é importante para garantir que os caracteres estejam corretos.
 
-1. **Primeiro Dígito Verificador:**
-   - Multiplique cada um dos 9 dígitos pelos pesos de 10 a 2.
-   - Some os resultados das multiplicações.
-   - Calcule o resto da divisão dessa soma por 11.
-   - Se o resto for igual a 10, o primeiro dígito verificador é 0. Caso contrário, é o próprio resto.
+2. **Dígitos Verificadores**: O último dígito do CPF é chamado de dígito verificador. Para verificar se um CPF é válido, calculamos esses dígitos da seguinte maneira:
+   - Primeiro Dígito Verificador (YY): Utiliza-se uma fórmula que multiplica os nove primeiros dígitos do CPF por pesos específicos e, em seguida, realiza uma soma. O resultado dessa soma é usado para calcular o primeiro dígito verificador. Se o resultado for igual ao dígito existente no CPF, ele é válido.
+   - Segundo Dígito Verificador: O procedimento é semelhante ao do primeiro dígito verificador, mas agora inclui o primeiro dígito verificador calculado. O resultado é usado para calcular o segundo dígito verificador.
 
-2. **Segundo Dígito Verificador:**
-   - Agora, incluindo o primeiro dígito verificador calculado, multiplique cada um dos 10 dígitos pelos pesos de 11 a 2.
-   - Siga o mesmo processo de soma, cálculo do resto e atribuição do dígito verificador.
+Se os dígitos verificadores calculados correspondem aos dígitos reais no CPF, então o CPF é considerado válido.
 
-Se ambos os dígitos verificadores forem válidos, o CPF é considerado válido. Caso contrário, ele é inválido.
+### Validação de RG (Registro Geral)
 
-**Verificação do Dígito Verificador no RG:**
+A validação do RG também envolve um formato específico e dígitos verificadores:
 
-No RG, o dígito verificador, quando calculado, segue uma lógica um pouco diferente, como explicado anteriormente:
+1. **Formato do RG**: O RG é um documento de identificação que contém um número com um formato específico. Ele normalmente é apresentado no formato "XX.XXX.XXX-Y", onde "X" representa dígitos numéricos e "Y" é um dígito de verificação. O formato é importante para garantir que os caracteres estejam corretos.
 
-- Cada dígito do RG é multiplicado por pesos decrescentes, começando com 9 e diminuindo até 2, da esquerda para a direita.
-- A soma ponderada dos dígitos é calculada.
-- O dígito verificador é obtido subtraindo-se a soma ponderada do módulo 11.
+2. **Dígito Verificador do RG**: O dígito verificador do RG é usado para verificar a validade do número do documento. Para calcular o dígito verificador, multiplicamos os sete primeiros dígitos do RG por pesos específicos e, em seguida, somamos esses produtos. O resultado é submetido a um cálculo adicional para determinar o dígito verificador. Se o dígito verificador calculado corresponder ao dígito real no RG, o número é considerado válido.
 
-Por exemplo, considerando o RG "12 345 678":
-- Ponderação: 1 x 9 + 2 x 8 + 3 x 7 + 4 x 6 + 5 x 5 + 6 x 4 + 7 x 3 + 8 x 2 = 132
-- Cálculo do Dígito Verificador: 11 - (132 % 11) = 11 - 0 = 11
-
-Nesse caso, o dígito verificador é 11, que não é um valor válido, então é corrigido para "X."
-
-Essa é a lógica usada para verificar a validade dos dígitos verificadores tanto no CPF quanto no RG, garantindo a autenticidade e a integridade dos documentos de identificação.
+Em ambas as validações, o objetivo é garantir que os documentos estejam no formato correto e que os dígitos verificadores correspondam aos valores esperados. Esses métodos são usados para evitar erros de digitação e falsificações, garantindo a integridade dos documentos de identificação.
