@@ -3,6 +3,7 @@ let indicetitulos = 0;
 titulos = [
   "Trabalho de Matematica",
   "Felipe Zanoni da Rosa",
+  "Validação de CPF e RG",
 ];
 
 function atualizarTitulo() {
