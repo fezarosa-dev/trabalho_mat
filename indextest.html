@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Dígito Verificador de RG</title>
+    <script>
+        function validarRG() {
+            const rg = document.getElementById("rg").value;
+            if (rg.length !== 9) {
+                alert("O RG deve conter 9 dígitos.");
+                return;
+            }
+
+            const multiplicadores = [2, 3, 4, 5, 6, 7, 8, 9];
+            let soma = 0;
+
+            for (let i = 0; i < 8; i++) {
+                soma += parseInt(rg.charAt(i)) * multiplicadores[i];
+            }
+
+            const resto = soma % 11;
+            let digitoVerificador = 11 - resto;
+
+            if (digitoVerificador === 10) {
+                digitoVerificador = "X";
+            } else if (digitoVerificador === 11) {
+                digitoVerificador = 0;
+            }
+
+            if (rg.charAt(8) === digitoVerificador.toString()) {
+                alert("RG válido!");
+            } else {
+                alert("RG inválido!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Validação de Dígito Verificador de RG</h1>
+    <label for="rg">Digite seu RG (9 dígitos):</label>
+    <input type="text" id="rg" maxlength="9">
+    <button onclick="validarRG()">Validar RG</button>
+</body>
+</html>

@@ -1,0 +1,120 @@
+
+
+
+@media screen and (max-width: 768px) {
+    .funcoesclass {
+        width: 90%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .vetor {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 769px) {
+    .funcoesclass {
+        width: 50%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    button {
+        width: 200px;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    .vetor {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    select {
+        width: 50%;
+    }
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+}
+*{
+    font-family: "Josefin Sans", san;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+}
+.funcoesclass{
+    background-color: #778899;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #000;
+}
+button {
+    width: 200px;
+    border-radius: 15px;
+    transition: transform 0.2s; /* Adiciona uma transição suave */
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.1); /* Aumenta em 10% quando o mouse está sobre o botão */
+}
+
+input{
+    border-radius: 5px;
+    width: 30%;
+    transition: transform 0.2s;
+}
+input:hover{
+    transform: scale(1.1);
+}
+.vetor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #31383f;
+    border: 2px solid #fff;
+    border-radius: 30px;
+}
+.vetor p{
+    color: #fff;
+}
+select{
+    border-radius: 5px;
+}
+a{
+    color: #fff;
+}
